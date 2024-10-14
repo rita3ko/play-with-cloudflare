@@ -1,158 +1,68 @@
-# Cloudflare Pages Static Site with Blog
+# Exercise 1: Deploy a Simple Personal Site to Cloudflare Pages
 
-This repository guides you through creating a static site with Cloudflare Pages and then adding a blog functionality using Cloudflare Pages Functions and D1 database. The project is divided into three exercises, each building upon the previous one.
+In this exercise, you'll download a pre-designed simple personal site, deploy it to Cloudflare Pages, and then personalize it with your own content.
 
-## Prerequisites
+## Step 1: Download the Exercise Files
 
-- A Cloudflare account
-- Git installed on your local machine
-- Node.js and npm installed
-- A picture of yourself named "profile-picture.jpg"
+1. Go to the GitHub repository containing the exercise files.
+2. Navigate to the `exercise-1` directory.
+3. If you see a "Download" button, click it to download the directory.
+4. If there's no "Download" button:
+   - Copy the current URL of the `exercise-1` directory page.
+   - Go to [https://download-directory.github.io/](https://download-directory.github.io/)
+   - Paste the URL into the input field and click "Download".
+5. Once downloaded, extract the ZIP file to a location on your computer.
 
-## Repository Structure
+## Step 2: Review the Files
 
-```
-cloudflare-pages-blog/
-├── exercise-1/
-│   └── assets/
-│       ├── index.html
-│       ├── styles.css
-│       └── profile-picture.jpg
-```
+In the extracted `exercise-1` folder, you should see:
+- `index.html`: The main (and only) page of the site
+- `styles.css`: The stylesheet for the site
+- `profile-picture.jpg`: A sample profile picture
 
-## Exercise 1: Deploy Static Site to Cloudflare Pages
+Take a moment to open and review these files in a text editor.
 
-In this exercise, you'll create a simple static site and deploy it to Cloudflare Pages using the drag-and-drop UI.
+## Step 3: Deploy to Cloudflare Pages
 
-1. Navigate to the `exercise-1/assets` directory.
+1. Log in to your Cloudflare account and go to the Pages section.
+2. Click "Create a project" then "Upload assets".
+3. Give your project a name (e.g., "my-personal-site").
+4. Drag and drop the contents of the `exercise-1` folder (not the folder itself) into the upload area.
+5. Click "Deploy site".
+6. Cloudflare will provide you with a URL for your site (e.g., https://your-project-name.pages.dev).
+7. Visit the URL to see your deployed site.
 
-2. Ensure you have placed your `profile-picture.jpg` in this directory.
+## Step 4: Personalize Your Site
 
-3. Create the following files in the `assets` directory:
+Now, let's personalize the site with your own content:
 
-   `index.html`:
-   ```html
-   <!DOCTYPE html>
-   <html lang="en">
-   <head>
-       <meta charset="UTF-8">
-       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <title>My Static Site</title>
-       <link rel="stylesheet" href="styles.css">
-   </head>
-   <body>
-       <header>
-           <nav>
-               <ul>
-                   <li><a href="index.html" class="active">Home</a></li>
-                   <li><a href="about.html">About</a></li>
-               </ul>
-           </nav>
-       </header>
-       <main>
-           <h1>Welcome to My Static Site</h1>
-           <p>This is a simple static site hosted on Cloudflare Pages.</p>
-       </main>
-       <footer>
-           <p>&copy; 2024 My Static Site. All rights reserved.</p>
-       </footer>
-   </body>
-   </html>
-   ```
+1. Replace `profile-picture.jpg` with your own photo (keep the filename the same).
+2. Open `index.html` in a text editor and make the following changes:
+   - Replace "Hi, I'm [Your Name]" with your actual name.
+   - Update the introduction paragraph with your own text.
+   - Update the social media links with your own profiles:
+     - Replace `https://www.linkedin.com/in/yourusername` with your LinkedIn URL.
+     - Replace `https://twitter.com/yourusername` with your Twitter URL.
+     - Replace `your.email@example.com` with your email address.
+3. Save your changes.
 
-   `about.html`:
-   ```html
-   <!DOCTYPE html>
-   <html lang="en">
-   <head>
-       <meta charset="UTF-8">
-       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <title>About - My Static Site</title>
-       <link rel="stylesheet" href="styles.css">
-   </head>
-   <body>
-       <header>
-           <nav>
-               <ul>
-                   <li><a href="index.html">Home</a></li>
-                   <li><a href="about.html" class="active">About</a></li>
-               </ul>
-           </nav>
-       </header>
-       <main>
-           <h1>About Me</h1>
-           <img src="profile-picture.jpg" alt="My Profile Picture" class="profile-picture">
-           <p>This is the about page of my static site.</p>
-       </main>
-       <footer>
-           <p>&copy; 2024 My Static Site. All rights reserved.</p>
-       </footer>
-   </body>
-   </html>
-   ```
+## Step 5: Re-deploy Your Personalized Site
 
-   `styles.css`:
-   ```css
-   body {
-       font-family: Arial, sans-serif;
-       line-height: 1.6;
-       color: #333;
-       max-width: 800px;
-       margin: 0 auto;
-       padding: 20px;
-   }
+1. Go back to your Cloudflare Pages project.
+2. Click "Upload assets" again.
+3. Drag and drop your updated files (index.html and your new profile picture) into the upload area.
+4. Click "Deploy site".
+5. Once deployment is complete, visit your site's URL again to see your personalized version.
 
-   header {
-       background-color: #fff;
-       padding: 1rem;
-       margin-bottom: 2rem;
-       border-bottom: 1px solid #eee;
-   }
+Congratulations! You've now deployed a personalized, minimalist personal site to Cloudflare Pages.
 
-   nav ul {
-       list-style-type: none;
-       padding: 0;
-       margin: 0;
-   }
+## Design Notes
 
-   nav ul li {
-       display: inline;
-       margin-right: 10px;
-   }
+Your site features:
+- An ultra-clean design with no frames or shadows, emphasizing content and whitespace.
+- High-contrast black text on a white background for maximum readability.
+- A round, black and white profile picture on the left side.
+- Your name, introduction, and social media links on the right side, all left-aligned.
+- Responsive design that adjusts for smaller screens.
 
-   nav ul li a {
-       text-decoration: none;
-       color: #333;
-       padding-bottom: 3px;
-   }
-
-   nav ul li a.active {
-       border-bottom: 2px solid #333;
-   }
-
-   h1, h2, h3 {
-       color: #000;
-   }
-
-   .profile-picture {
-       max-width: 200px;
-       border-radius: 50%;
-       margin-bottom: 1rem;
-   }
-
-   footer {
-       margin-top: 2rem;
-       text-align: center;
-       font-size: 0.8rem;
-       color: #777;
-   }
-   ```
-
-4. Deploy to Cloudflare Pages:
-   - Log in to your Cloudflare account and go to the Pages section.
-   - Click "Create a project" and then "Upload assets".
-   - Give your project a name.
-   - Drag and drop the contents of the `assets` folder into the upload area.
-   - Click "Deploy site".
-
-5. Once deployed, Cloudflare will provide you with a URL for your site. Visit it to confirm everything is working correctly.
+The stark black and white color scheme, including the grayscale profile picture, creates a bold, timeless design that puts the focus on your content.
